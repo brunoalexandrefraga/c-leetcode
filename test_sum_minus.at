@@ -1,0 +1,21 @@
+# test_sum_minus.at
+
+AT_INIT
+AT_SETUP([Testando a função sum])
+
+AT_CHECK([./sum_minus_test sum 2 3], [0], [stdout], [5])
+AT_CHECK([./sum_minus_test sum -2 3], [0], [stdout], [1])
+AT_CHECK([./sum_minus_test sum 0 0], [0], [stdout], [0])
+AT_CHECK([./sum_minus_test sum -2 -3], [0], [stdout], [-5])
+
+AT_CLEANUP
+
+AT_SETUP([Testando a função minus])
+
+AT_CHECK([./sum_minus_test minus 5 3], [0], [stdout], [2])
+AT_CHECK([./sum_minus_test minus -2 -3], [0], [stdout], [1])
+AT_CHECK([./sum_minus_test minus 0 0], [0], [stdout], [0])
+AT_CHECK([./sum_minus_test minus 3 5], [0], [stdout], [-2])
+
+AT_CLEANUP
+
